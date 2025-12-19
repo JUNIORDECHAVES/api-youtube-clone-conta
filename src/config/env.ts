@@ -1,5 +1,5 @@
 import "dotenv/config";
 
 export const env = {
-    PORT: process.env.PORT || 3333,
+    PORT: process.env.PORT? Number(process.env.PORT) : 3333
 };
