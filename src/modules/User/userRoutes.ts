@@ -12,7 +12,7 @@ class UserRoutes {
     }
 
     private initializeRoutes() {
-        this.router.post("/", this.controller.createUser);
+        this.router.post("/sign-up", this.controller.createUser);
         this.router.post("/login", this.controller.login);
         this.router.get("/list", this.controller.list);
 
