@@ -70,13 +70,12 @@ export class CreateUser {
                 where: { id: userId},
                 select: {
                     id: true,
-                    
                 }
             })
             if(!user) {
                 return { message: "User nao encontrado" };
             }
-            return user
+            return { user };
         }
         catch (error) {
             return { message: "Error ao buscar user" };
