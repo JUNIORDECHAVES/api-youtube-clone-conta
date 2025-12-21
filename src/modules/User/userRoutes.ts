@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { UserController } from "./UserController";
+import { authMiddleware } from "../../Middleware/authMiddleware";
 
 class UserRoutes {
     public readonly router: Router;
@@ -15,6 +16,7 @@ class UserRoutes {
         this.router.post("/sign-up", this.controller.createUser);
         this.router.post("/sign-in", this.controller.login);
         this.router.get("/list", this.controller.list);
+        this.router.get("/get-user", authMiddleware,this.controller.getUser);
 
     }
 }

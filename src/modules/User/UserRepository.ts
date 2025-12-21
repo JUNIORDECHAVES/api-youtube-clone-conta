@@ -64,6 +64,25 @@ export class CreateUser {
         }
     }
 
+    async getUser(userId: string): Promise<any> {
+        try {
+            const user = await prisma.user.findUnique({
+                where: { id: userId},
+                select: {
+                    id: true,
+                    
+                }
+            })
+            if(!user) {
+                return { message: "User nao encontrado" };
+            }
+            return user
+        }
+        catch (error) {
+            return { message: "Error ao buscar user" };
+        }   
+    }
+
     private async hashPassword(password: string): Promise<string> {
         const salt_Rounds = 10;
         try {

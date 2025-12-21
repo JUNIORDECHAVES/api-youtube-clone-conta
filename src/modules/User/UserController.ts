@@ -21,4 +21,9 @@ export class UserController {
         const user = await this.service.login(req.body);
         return res.status(200).json(user);
     }
+
+    getUser = async (req: Request, res: Response) => {
+        const user = await this.service.getUser(req.body.userId);
+        return res.status(200).json(user);
+    }
 }

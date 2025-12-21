@@ -36,4 +36,8 @@ export class UserService {
         }
         return this.repository.login(data)
     }
+
+    async getUser(userId: string): Promise<any> {
+        return this.repository.getUser(userId)
+    }
 }
