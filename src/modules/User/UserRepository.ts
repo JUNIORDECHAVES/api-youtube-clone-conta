@@ -70,6 +70,7 @@ export class CreateUser {
                 where: { id: userId},
                 select: {
                     id: true,
+                    name: true
                 }
             })
             if(!user) {
