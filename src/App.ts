@@ -19,9 +19,6 @@ export class App {
         this.app.use(Routes.configure())
     }
     private enableCors(): void{
-        this.app.use(cors({
-            origin: [process.env.ORIGIN_CORS as string],
-            credentials: true
-        }));
+        this.app.use(cors());
     }
 }
